@@ -1,0 +1,37 @@
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Porciones</th>
+            <th>Comprar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (cake of cakes; track cake.name) {
+        <tr>
+            <td>{{ cake.name }}</td>
+            <td>{{ cake.price | currency}}</td>
+            @if (cake.stock >0) {
+            <td>{{ cake.stock }}</td>
+            <td>
+                <app-input-number [(porcion)]="cake.porcion" [max]="cake.stock"
+                    (maxReached)="maxReached($event)"></app-input-number>
+
+            </td>
+            <td><button class="btn btn-primary" (click)="addTocart(cake)">Comprar</button></td>
+            } @else {
+            <td class="badge text-bg-info">SIN STOCK</td>
+            <td></td>
+            <td></td>
+            }
+
+        </tr>
+        } @empty {
+        <tr>
+            <td colspan="4">Nos quedamos sin tortas</td>
+        </tr>
+        }
+    </tbody>
+</table>

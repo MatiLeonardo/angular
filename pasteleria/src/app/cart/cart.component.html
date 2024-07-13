@@ -1,0 +1,6 @@
+<h1>Tu pedido!</h1>
+<ul>
+    @for (cake of shopList; track cake.name) {
+    <li>{{cake.name}} : {{cake.porcion}}</li>
+    }
+</ul>
