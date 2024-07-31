@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { Cake } from './cake-list/cake';
 
-const URL = 'https://6691de7426c2a69f6e90e955.mockapi.io/cakes';
+const URL = 'https://6691de7426c2a69f6e90e955.mockapi.io/cakes/cakes';
 @Injectable({
   providedIn: 'root'
 })
